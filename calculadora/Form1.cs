@@ -12,7 +12,8 @@ namespace calculadora
 {
     public partial class Form1 : Form
     {
-        int a, b;
+        double a, b;
+        
         public Form1()
         {
             InitializeComponent();
@@ -20,42 +21,80 @@ namespace calculadora
 
         private void btnsomar_Click(object sender, EventArgs e)
         {
-            a = int.Parse(textBox1.Text);
-            b = int.Parse(textBox2.Text);
+            a = double.Parse(textBox1.Text);
+            b = double.Parse(textBox2.Text);
+            label1.Text = "+";
+            result.Text = Convert.ToString(a+b);
         }
 
         private void btnsub_Click(object sender, EventArgs e)
         {
-
+            a = double.Parse(textBox1.Text);
+            b = double.Parse(textBox2.Text);
+            label1.Text = "-"; 
+            result.Text = Convert.ToString(a - b);
         }
 
         private void btnmult_Click(object sender, EventArgs e)
         {
-
+            a = double.Parse(textBox1.Text);
+            b = double.Parse(textBox2.Text); 
+            label1.Text = "*"; 
+            result.Text = Convert.ToString(a * b);
         }
 
         private void btndiv_Click(object sender, EventArgs e)
         {
-
+            a = double.Parse(textBox1.Text);
+            b = double.Parse(textBox2.Text); 
+            label1.Text = "/"; 
+            result.Text = Convert.ToString(a / b);
         }
 
         private void btncomp_Click(object sender, EventArgs e)
         {
-
+            a = double.Parse(textBox1.Text);
+            b = double.Parse(textBox2.Text);
+            if (a > b) { 
+                result.Text = $"o número {a} é maior";
+            }
+            else { 
+                result.Text = $"o número {b} é maior"; 
+            }
         }
 
         private void btnparimpar_Click(object sender, EventArgs e)
         {
+            a = double.Parse(textBox1.Text);
+            b = double.Parse(textBox2.Text);
+            if (a % 2 == 0 && b % 2 == 0) { result.Text = "os dois são pares"; }
+            else if (a % 2 == 0 && b % 2 != 0) { result.Text = $" {a} é par e {b} é impar"; }
+            else if (a % 2 != 0 && b % 2 == 0) { result.Text = $" {a} é impar e {b} é par"; }
+            else { result.Text = "os dois são impares"; }
 
         }
 
         private void btnfechar_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(btnsomar, "use virgula para numeros decimais");
         }
 
         private void btnlimpar_Click(object sender, EventArgs e)
         {
+            label1.Text = "  ";
+            textBox1.Text = "";
+            label2.Text = "";
+            textBox2.Text = "";
 
         }
     }
