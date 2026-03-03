@@ -43,6 +43,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.result = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnsomar
@@ -155,10 +160,11 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(75, 143);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(229, 20);
+            this.label2.Size = new System.Drawing.Size(254, 20);
             this.label2.TabIndex = 11;
-            this.label2.Text = "--------------------------------------------";
+            this.label2.Text = "-------------------------------------------------";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // result
             // 
@@ -216,6 +222,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label result;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.ToolTip toolTip3;
+        private System.Windows.Forms.ToolTip toolTip4;
+        private System.Windows.Forms.ToolTip toolTip5;
+        private System.Windows.Forms.ToolTip toolTip6;
     }
 }
 

@@ -87,13 +87,23 @@ namespace calculadora
         private void Form1_Load(object sender, EventArgs e)
         {
             toolTip1.SetToolTip(btnsomar, "use virgula para numeros decimais");
+            toolTip2.SetToolTip(btnsub, "use virgula para numeros decimais");
+            toolTip3.SetToolTip(btndiv, "use virgula para numeros decimais");
+            toolTip4.SetToolTip(btnmult, "use virgula para numeros decimais");
+            toolTip5.SetToolTip(btncomp, "use virgula para numeros decimais");
+            toolTip6.SetToolTip(btnparimpar, "não use numeros decimais ou todos serão impares");
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnlimpar_Click(object sender, EventArgs e)
         {
             label1.Text = "  ";
             textBox1.Text = "";
-            label2.Text = "";
+            result.Text = "";
             textBox2.Text = "";
 
         }
