@@ -99,6 +99,11 @@ namespace calculadora
 
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnlimpar_Click(object sender, EventArgs e)
         {
             label1.Text = "  ";
