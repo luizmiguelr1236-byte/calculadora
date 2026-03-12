@@ -1,4 +1,5 @@
-﻿using System;
+﻿using calculadora.formularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -102,6 +103,11 @@ namespace calculadora
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
         }
 
         private void btnlimpar_Click(object sender, EventArgs e)

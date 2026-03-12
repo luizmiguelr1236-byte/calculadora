@@ -26,5 +26,33 @@ namespace calculadora.formularios
         {
 
         }
+
+        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comBotoesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Form1 novoForm = new Form1();
+            novoForm.Show();
+        }
+
+        private void MDI_MENU_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("Deseja realmente sair?" , "Saindo...", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (resultado == DialogResult.Yes) { e.Cancel = false; }
+            else if (resultado == DialogResult.No) { e.Cancel = true;  }
+
+            /*
+             ou if(MessageBox.Show("Deseja realmente sair?" , "Saindo...", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No){
+                    e.Cancel = true;
+                }
+                else{
+                    
+                }
+             */
+        }
     }
 }
