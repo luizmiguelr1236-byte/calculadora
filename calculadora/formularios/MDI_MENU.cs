@@ -36,6 +36,7 @@ namespace calculadora.formularios
         {
 
             Form1 novoForm = new Form1();
+            novoForm.MdiParent = this;
             novoForm.Show();
         }
 
@@ -58,6 +59,11 @@ namespace calculadora.formularios
         private void toolStripStatusLabel3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+          //datehour.Text =DateTime.Now.ToString();
         }
     }
 }

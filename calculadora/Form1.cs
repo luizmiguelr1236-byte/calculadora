@@ -22,56 +22,73 @@ namespace calculadora
 
         private void btnsomar_Click(object sender, EventArgs e)
         {
-            a = double.Parse(textBox1.Text);
+            try {a = double.Parse(textBox1.Text);
             b = double.Parse(textBox2.Text);
             label1.Text = "+";
-            result.Text = Convert.ToString(a+b);
+            result.Text = Convert.ToString(a+b); } catch (Exception ex) { MessageBox.Show("apenas números!","erro", MessageBoxButtons.OK); }
+            
         }
 
         private void btnsub_Click(object sender, EventArgs e)
         {
-            a = double.Parse(textBox1.Text);
-            b = double.Parse(textBox2.Text);
-            label1.Text = "-"; 
-            result.Text = Convert.ToString(a - b);
+            try
+            {
+                a = double.Parse(textBox1.Text);
+                b = double.Parse(textBox2.Text);
+                label1.Text = "-";
+                result.Text = Convert.ToString(a - b);
+            }
+            catch (Exception ex) { MessageBox.Show("apenas números!", "erro", MessageBoxButtons.OK); }
         }
 
         private void btnmult_Click(object sender, EventArgs e)
         {
-            a = double.Parse(textBox1.Text);
-            b = double.Parse(textBox2.Text); 
-            label1.Text = "*"; 
-            result.Text = Convert.ToString(a * b);
+            try
+            {
+                a = double.Parse(textBox1.Text);
+                b = double.Parse(textBox2.Text);
+                label1.Text = "*";
+                result.Text = Convert.ToString(a * b);
+            }
+            catch (Exception ex) { MessageBox.Show("apenas números!", "erro", MessageBoxButtons.OK); }
         }
 
         private void btndiv_Click(object sender, EventArgs e)
         {
-            a = double.Parse(textBox1.Text);
-            b = double.Parse(textBox2.Text); 
-            label1.Text = "/"; 
-            result.Text = Convert.ToString(a / b);
+            try
+            {
+                a = double.Parse(textBox1.Text);
+                b = double.Parse(textBox2.Text);
+                label1.Text = "/";
+                result.Text = Convert.ToString(a / b);
+            }
+            catch (Exception ex) { MessageBox.Show("apenas números!", "erro", MessageBoxButtons.OK); }
         }
 
         private void btncomp_Click(object sender, EventArgs e)
         {
-            a = double.Parse(textBox1.Text);
+            try {a = double.Parse(textBox1.Text);
             b = double.Parse(textBox2.Text);
             if (a > b) { 
                 result.Text = $"o número {a} é maior";
             }
             else { 
                 result.Text = $"o número {b} é maior"; 
-            }
+            } }
+            catch (Exception ex) { MessageBox.Show("apenas números!", "erro", MessageBoxButtons.OK); }
+
         }
 
         private void btnparimpar_Click(object sender, EventArgs e)
         {
-            a = double.Parse(textBox1.Text);
+            try {a = double.Parse(textBox1.Text);
             b = double.Parse(textBox2.Text);
             if (a % 2 == 0 && b % 2 == 0) { result.Text = "os dois são pares"; }
             else if (a % 2 == 0 && b % 2 != 0) { result.Text = $" {a} é par e {b} é impar"; }
             else if (a % 2 != 0 && b % 2 == 0) { result.Text = $" {a} é impar e {b} é par"; }
-            else { result.Text = "os dois são impares"; }
+            else { result.Text = "os dois são impares"; } }
+            catch (Exception ex) { MessageBox.Show("apenas números!", "erro", MessageBoxButtons.OK); }
+
 
         }
 
