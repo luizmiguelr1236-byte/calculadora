@@ -54,5 +54,10 @@ namespace calculadora.formularios
                 }
              */
         }
+
+        private void toolStripStatusLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

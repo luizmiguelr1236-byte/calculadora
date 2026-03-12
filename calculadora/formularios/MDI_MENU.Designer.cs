@@ -269,6 +269,7 @@
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(107, 25);
             this.toolStripStatusLabel3.Text = "Data e Hora";
+            this.toolStripStatusLabel3.Click += new System.EventHandler(this.toolStripStatusLabel3_Click);
             // 
             // MDI_MENU
             // 
