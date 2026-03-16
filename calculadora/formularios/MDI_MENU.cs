@@ -65,5 +65,12 @@ namespace calculadora.formularios
         {
           //datehour.Text =DateTime.Now.ToString();
         }
+
+        private void comRadiobuttonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            radiobuttoncalc radiocalc = new radiobuttoncalc();
+            radiocalc.MdiParent = this;
+            radiocalc.Show();
+        }
     }
 }

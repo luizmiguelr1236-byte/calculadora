@@ -102,6 +102,7 @@
             this.comRadiobuttonToolStripMenuItem.Name = "comRadiobuttonToolStripMenuItem";
             this.comRadiobuttonToolStripMenuItem.Size = new System.Drawing.Size(271, 34);
             this.comRadiobuttonToolStripMenuItem.Text = "com radiobutton";
+            this.comRadiobuttonToolStripMenuItem.Click += new System.EventHandler(this.comRadiobuttonToolStripMenuItem_Click);
             // 
             // especiaisToolStripMenuItem
             // 
@@ -148,19 +149,19 @@
             // cascataToolStripMenuItem
             // 
             this.cascataToolStripMenuItem.Name = "cascataToolStripMenuItem";
-            this.cascataToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.cascataToolStripMenuItem.Size = new System.Drawing.Size(249, 34);
             this.cascataToolStripMenuItem.Text = "cascata";
             // 
             // horizontalmenrteToolStripMenuItem
             // 
             this.horizontalmenrteToolStripMenuItem.Name = "horizontalmenrteToolStripMenuItem";
-            this.horizontalmenrteToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.horizontalmenrteToolStripMenuItem.Size = new System.Drawing.Size(249, 34);
             this.horizontalmenrteToolStripMenuItem.Text = "horizontalmenrte";
             // 
             // verticalmenteToolStripMenuItem
             // 
             this.verticalmenteToolStripMenuItem.Name = "verticalmenteToolStripMenuItem";
-            this.verticalmenteToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.verticalmenteToolStripMenuItem.Size = new System.Drawing.Size(249, 34);
             this.verticalmenteToolStripMenuItem.Text = "verticalmente";
             // 
             // ajudaToolStripMenuItem
