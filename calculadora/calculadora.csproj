@@ -67,6 +67,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="formularios\calcsuper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\calcsuper.Designer.cs">
+      <DependentUpon>calcsuper.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\MDI_MENU.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\calcsuper.resx">
+      <DependentUpon>calcsuper.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\MDI_MENU.resx">
       <DependentUpon>MDI_MENU.cs</DependentUpon>

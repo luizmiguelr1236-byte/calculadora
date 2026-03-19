@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -69,6 +70,43 @@ namespace calculadora.formularios
         private void comRadiobuttonToolStripMenuItem_Click(object sender, EventArgs e)
         {
             radiobuttoncalc radiocalc = new radiobuttoncalc();
+            radiocalc.MdiParent = this;
+            radiocalc.Show();
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cascataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.Cascade);
+        }
+
+        private void horizontalmenrteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.TileHorizontal);
+        }
+
+        private void verticalmenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.TileVertical);
+        }
+
+        private void novoToolStripButton_Click(object sender, EventArgs e)
+        {
+            Process.Start("notepad.exe");
+        }
+
+        private void abrirToolStripButton_Click(object sender, EventArgs e)
+        {
+            Process.Start("");
+        }
+
+        private void visorUnicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            calcsuper radiocalc = new calcsuper();
             radiocalc.MdiParent = this;
             radiocalc.Show();
         }
