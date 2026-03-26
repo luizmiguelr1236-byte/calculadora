@@ -12,6 +12,9 @@ namespace calculadora.formularios
 {
     public partial class calcsuper : Form
     {
+        double prinumero;
+        string operacao;
+        bool limpar;
         public calcsuper()
         {
             InitializeComponent();
@@ -69,8 +72,7 @@ namespace calculadora.formularios
 
         private void btnvirgula_Click(object sender, EventArgs e)
         {
-            string a = btnvirgula.Text;
-            if (labelvisor.Text.Contains(a)) { 
+            if (labelvisor.Text.Contains(btnvirgula.Text)) { 
                 
             }
             else
@@ -82,6 +84,25 @@ namespace calculadora.formularios
         private void btnsom_Click(object sender, EventArgs e)
         {
             labelvisor.Text += btnsom.Text;
+        }
+        private void operacoes(object sender, EventArgs e)
+        {
+            prinumero = double.Parse(labelvisor.Text);
+            operacao = ((Button)sender).Text;
+            limpar = true;
+        }
+        private void digitos(object sender, EventArgs e)
+        {
+            string dogito = ((Button)sender).Text;
+            if (labelvisor.Text == "0" || limpar == true)
+            {
+                labelvisor.Text = dogito;
+                limpar = false;
+            }
+            else {
+                labelvisor.Text += dogito;
+            }
+
         }
 
         private void btnmin_Click(object sender, EventArgs e)
@@ -107,35 +128,51 @@ namespace calculadora.formularios
         private void btnmaismenos_Click(object sender, EventArgs e)
         {
             double a = double.Parse(labelvisor.Text);
-            double b = a - 2 * a;
+            double b = a * -1;
             labelvisor.Text = Convert.ToString(b);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string[] ska = {"+","-","X",":","^"};
-            string sla = labelvisor.Text, b1, b2;
+            try 
+            {
+                double secnumero = double.Parse(labelvisor.Text);
+                switch (operacao) {
+                    case "+":
+                        labelvisor.Text = (prinumero + secnumero).ToString();
+                        break;
+                    case "-":
+                        labelvisor.Text = (prinumero - secnumero).ToString();
+                        break;
+                    case "X":
+                        labelvisor.Text = (prinumero * secnumero).ToString();
+                        break;
+                    case "/":
+                        labelvisor.Text = (prinumero / secnumero).ToString();
+                        break;
+                    case "^":
+                        labelvisor.Text = (Math.Pow(prinumero, secnumero)).ToString();
+                        break;
 
-            foreach (string sk in ska) {
-                char a = Convert.ToChar(sk);
-                if (sla.Contains(sk)) {
-                    string[] b = sla.Split(a);
-                    switch(sk){
-                        case "+":
-                            break;
-                    }
                 }
             }
+            catch(Exception ex) { MessageBox.Show(ex.Message); }
+            
         }
 
         private void btncl_Click(object sender, EventArgs e)
         {
-            labelvisor.Text = "0";
+            labelvisor.Text = "";
         }
 
         private void btndel_Click(object sender, EventArgs e)
         {
-            
+
+            if (!string.IsNullOrEmpty(labelvisor.Text)) 
+            {
+                labelvisor.Text = labelvisor.Text.Substring(0, labelvisor.Text.Length - 1);
+            }   
         }
+            
     }
 }

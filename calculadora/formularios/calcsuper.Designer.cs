@@ -300,13 +300,16 @@
             // 
             // btnig
             // 
-            this.btnig.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnig.Location = new System.Drawing.Point(359, 120);
+            this.btnig.AllowDrop = true;
+            this.btnig.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnig.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnig.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnig.Location = new System.Drawing.Point(358, 120);
             this.btnig.Name = "btnig";
-            this.btnig.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.btnig.Size = new System.Drawing.Size(117, 62);
+            this.btnig.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
+            this.btnig.Size = new System.Drawing.Size(118, 62);
             this.btnig.TabIndex = 4;
-            this.btnig.Text = "=";
+            this.btnig.Text = "=\r\n        ";
             this.btnig.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnig.UseVisualStyleBackColor = true;
             this.btnig.Click += new System.EventHandler(this.button1_Click);
