@@ -115,12 +115,16 @@ namespace calculadora.formularios
         {
             string[] ska = {"+","-","X",":","^"};
             string sla = labelvisor.Text, b1, b2;
-            if (sla.Contains(ska[1])) {
-                b1 = sla.Split('+')[0];
-                b2 = sla.Split('+')[1];
-                int c1 = Convert.ToInt32 (b1);
-                int c2 = Convert.ToInt32(b2);
-                labelvisor.Text = (Convert.ToString(c1+c2));
+
+            foreach (string sk in ska) {
+                char a = Convert.ToChar(sk);
+                if (sla.Contains(sk)) {
+                    string[] b = sla.Split(a);
+                    switch(sk){
+                        case "+":
+                            break;
+                    }
+                }
             }
         }
 
