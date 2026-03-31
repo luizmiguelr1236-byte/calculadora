@@ -12,7 +12,7 @@ namespace calculadora.formularios
 {
     public partial class calcsuper : Form
     {
-        double prinumero;
+        decimal prinumero;
         string operacao;
         bool limpar;
         public calcsuper()
@@ -22,102 +22,104 @@ namespace calculadora.formularios
 
         private void btn0_Click(object sender, EventArgs e)
         {
-            labelvisor.Text += btn0.Text;
+            labelvisor.Text += ((Button)sender).Text;
         }
 
         private void btn1_Click(object sender, EventArgs e)
         {
-            labelvisor.Text += btn1.Text;
+            labelvisor.Text += ((Button)sender).Text;
         }
 
         private void btn2_Click(object sender, EventArgs e)
         {
-            labelvisor.Text += btn2.Text;
+            labelvisor.Text += ((Button)sender).Text;
         }
 
         private void btn3_Click(object sender, EventArgs e)
         {
-            labelvisor.Text += btn3.Text;
+            labelvisor.Text += ((Button)sender).Text;
         }
 
         private void btn4_Click(object sender, EventArgs e)
         {
-            labelvisor.Text += btn4.Text;
+            labelvisor.Text += ((Button)sender).Text;
         }
 
         private void btn5_Click(object sender, EventArgs e)
         {
-            labelvisor.Text += btn5.Text;
+            labelvisor.Text += ((Button)sender).Text;
         }
 
         private void btn6_Click(object sender, EventArgs e)
         {
-            labelvisor.Text += btn6.Text;
+            labelvisor.Text += ((Button)sender).Text;
         }
 
         private void btn7_Click(object sender, EventArgs e)
         {
-            labelvisor.Text += btn7.Text;
+            labelvisor.Text += ((Button)sender).Text;
         }
 
         private void btn8_Click(object sender, EventArgs e)
         {
-            labelvisor.Text += btn8.Text;
+            labelvisor.Text += ((Button)sender).Text;
         }
 
         private void btn9_Click(object sender, EventArgs e)
         {
-            labelvisor.Text += btn9.Text;
+            labelvisor.Text += ((Button)sender).Text;
         }
 
         private void btnvirgula_Click(object sender, EventArgs e)
         {
-            if (labelvisor.Text.Contains(btnvirgula.Text)) { 
-                
+            if (labelvisor.Text.Contains(btnvirgula.Text))
+            {
+
             }
             else
             {
-                labelvisor.Text += btnvirgula.Text;
+                labelvisor.Text += ((Button)sender).Text;
             }
         }
 
         private void btnsom_Click(object sender, EventArgs e)
         {
-            labelvisor.Text += btnsom.Text;
+            labelvisor.Text += ((Button)sender).Text;
         }
         private void operacoes(object sender, EventArgs e)
         {
-            prinumero = double.Parse(labelvisor.Text);
+            prinumero = decimal.Parse(labelvisor.Text);
             operacao = ((Button)sender).Text;
             limpar = true;
+            lblhist.Text = prinumero + "" + operacao + "";
         }
         private void digitos(object sender, EventArgs e)
         {
             string dogito = ((Button)sender).Text;
-            if (labelvisor.Text == "0" || limpar == true)
+            if (labelvisor.Text == "0" || limpar)
             {
-                labelvisor.Text = dogito;
+                labelvisor.Text = "";
                 limpar = false;
             }
-            else {
-                labelvisor.Text += dogito;
-            }
+
+            labelvisor.Text += dogito;
+
 
         }
 
         private void btnmin_Click(object sender, EventArgs e)
         {
-            labelvisor.Text += btnmin.Text;
+            labelvisor.Text += ((Button)sender).Text;
         }
 
         private void btnmult_Click(object sender, EventArgs e)
         {
-            labelvisor.Text += btnmult.Text;
+            labelvisor.Text += ((Button)sender).Text;
         }
 
         private void btndiv_Click(object sender, EventArgs e)
         {
-            labelvisor.Text += btndiv.Text;
+            
         }
 
         private void btnpot_Click(object sender, EventArgs e)
@@ -134,10 +136,11 @@ namespace calculadora.formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try 
+            try
             {
-                double secnumero = double.Parse(labelvisor.Text);
-                switch (operacao) {
+                decimal secnumero = decimal.Parse(labelvisor.Text);
+                switch (operacao)
+                {
                     case "+":
                         labelvisor.Text = (prinumero + secnumero).ToString();
                         break;
@@ -150,13 +153,14 @@ namespace calculadora.formularios
                     case "/":
                         labelvisor.Text = (prinumero / secnumero).ToString();
                         break;
-                    case "^":
-                        labelvisor.Text = (Math.Pow(prinumero, secnumero)).ToString();
-                        break;
-
+                        //case "^":
+                        //    labelvisor.Text = (Math.Pow(prinumero, secnumero)).ToString();
+                        //    break;
+                        lblhist.Text = prinumero + "" + operacao + "";
                 }
             }
-            catch(Exception ex) { MessageBox.Show(ex.Message); }
+            
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
             
         }
 
@@ -168,11 +172,15 @@ namespace calculadora.formularios
         private void btndel_Click(object sender, EventArgs e)
         {
 
-            if (!string.IsNullOrEmpty(labelvisor.Text)) 
+            if (!string.IsNullOrEmpty(labelvisor.Text))
             {
                 labelvisor.Text = labelvisor.Text.Substring(0, labelvisor.Text.Length - 1);
-            }   
+            }
         }
-            
+
+        private void calcsuper_Load(object sender, EventArgs e)
+        {
+            lblhist.Text = "";
+        }
     }
 }

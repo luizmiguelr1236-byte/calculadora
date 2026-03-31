@@ -51,6 +51,7 @@
             this.btndel = new System.Windows.Forms.Button();
             this.btnig = new System.Windows.Forms.Button();
             this.btncl = new System.Windows.Forms.Button();
+            this.lblhist = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -222,12 +223,12 @@
             // 
             // btnpot
             // 
-            this.btnpot.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnpot.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpot.Location = new System.Drawing.Point(9, 278);
             this.btnpot.Name = "btnpot";
             this.btnpot.Size = new System.Drawing.Size(101, 61);
             this.btnpot.TabIndex = 4;
-            this.btnpot.Text = "Pot";
+            this.btnpot.Text = "^";
             this.btnpot.UseVisualStyleBackColor = true;
             this.btnpot.Click += new System.EventHandler(this.btnpot_Click);
             // 
@@ -325,12 +326,22 @@
             this.btncl.UseVisualStyleBackColor = true;
             this.btncl.Click += new System.EventHandler(this.btncl_Click);
             // 
+            // lblhist
+            // 
+            this.lblhist.AutoSize = true;
+            this.lblhist.Location = new System.Drawing.Point(18, 7);
+            this.lblhist.Name = "lblhist";
+            this.lblhist.Size = new System.Drawing.Size(51, 20);
+            this.lblhist.TabIndex = 5;
+            this.lblhist.Text = "label1";
+            // 
             // calcsuper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(491, 552);
+            this.Controls.Add(this.lblhist);
             this.Controls.Add(this.btnig);
             this.Controls.Add(this.btncl);
             this.Controls.Add(this.btndel);
@@ -339,9 +350,11 @@
             this.Controls.Add(this.panel1);
             this.Name = "calcsuper";
             this.Text = "calcsuper";
+            this.Load += new System.EventHandler(this.calcsuper_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -370,5 +383,6 @@
         private System.Windows.Forms.Button btnsom;
         private System.Windows.Forms.Button btnig;
         private System.Windows.Forms.Button btncl;
+        private System.Windows.Forms.Label lblhist;
     }
 }
