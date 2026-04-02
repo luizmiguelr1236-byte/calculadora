@@ -96,7 +96,7 @@
             this.btn3.TabIndex = 8;
             this.btn3.Text = "3";
             this.btn3.UseVisualStyleBackColor = true;
-            this.btn3.Click += new System.EventHandler(this.btn3_Click);
+            this.btn3.Click += new System.EventHandler(this.digitos);
             // 
             // btn5
             // 
@@ -107,7 +107,7 @@
             this.btn5.TabIndex = 4;
             this.btn5.Text = "5";
             this.btn5.UseVisualStyleBackColor = true;
-            this.btn5.Click += new System.EventHandler(this.btn5_Click);
+            this.btn5.Click += new System.EventHandler(this.digitos);
             // 
             // btn0
             // 
@@ -118,7 +118,7 @@
             this.btn0.TabIndex = 9;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = true;
-            this.btn0.Click += new System.EventHandler(this.btn0_Click);
+            this.btn0.Click += new System.EventHandler(this.digitos);
             // 
             // btnmaismenos
             // 
@@ -140,7 +140,7 @@
             this.btn4.TabIndex = 3;
             this.btn4.Text = "4";
             this.btn4.UseVisualStyleBackColor = true;
-            this.btn4.Click += new System.EventHandler(this.btn4_Click);
+            this.btn4.Click += new System.EventHandler(this.digitos);
             // 
             // btn2
             // 
@@ -151,7 +151,7 @@
             this.btn2.TabIndex = 7;
             this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = true;
-            this.btn2.Click += new System.EventHandler(this.btn2_Click);
+            this.btn2.Click += new System.EventHandler(this.digitos);
             // 
             // btn1
             // 
@@ -162,7 +162,7 @@
             this.btn1.TabIndex = 6;
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = true;
-            this.btn1.Click += new System.EventHandler(this.btn1_Click);
+            this.btn1.Click += new System.EventHandler(this.digitos);
             // 
             // btn6
             // 
@@ -173,7 +173,7 @@
             this.btn6.TabIndex = 5;
             this.btn6.Text = "6";
             this.btn6.UseVisualStyleBackColor = true;
-            this.btn6.Click += new System.EventHandler(this.btn6_Click);
+            this.btn6.Click += new System.EventHandler(this.digitos);
             // 
             // btn9
             // 
@@ -184,7 +184,7 @@
             this.btn9.TabIndex = 2;
             this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = true;
-            this.btn9.Click += new System.EventHandler(this.btn9_Click);
+            this.btn9.Click += new System.EventHandler(this.digitos);
             // 
             // btn8
             // 
@@ -195,7 +195,7 @@
             this.btn8.TabIndex = 1;
             this.btn8.Text = "8";
             this.btn8.UseVisualStyleBackColor = true;
-            this.btn8.Click += new System.EventHandler(this.btn8_Click);
+            this.btn8.Click += new System.EventHandler(this.digitos);
             // 
             // btn7
             // 
@@ -206,7 +206,7 @@
             this.btn7.TabIndex = 0;
             this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = true;
-            this.btn7.Click += new System.EventHandler(this.btn7_Click);
+            this.btn7.Click += new System.EventHandler(this.digitos);
             // 
             // panel2
             // 
@@ -230,7 +230,7 @@
             this.btnpot.TabIndex = 4;
             this.btnpot.Text = "^";
             this.btnpot.UseVisualStyleBackColor = true;
-            this.btnpot.Click += new System.EventHandler(this.btnpot_Click);
+            this.btnpot.Click += new System.EventHandler(this.operacoes);
             // 
             // btndiv
             // 
@@ -241,7 +241,7 @@
             this.btndiv.TabIndex = 4;
             this.btndiv.Text = ":";
             this.btndiv.UseVisualStyleBackColor = true;
-            this.btndiv.Click += new System.EventHandler(this.btndiv_Click);
+            this.btndiv.Click += new System.EventHandler(this.operacoes);
             // 
             // btnmult
             // 
@@ -252,7 +252,7 @@
             this.btnmult.TabIndex = 4;
             this.btnmult.Text = "X";
             this.btnmult.UseVisualStyleBackColor = true;
-            this.btnmult.Click += new System.EventHandler(this.btnmult_Click);
+            this.btnmult.Click += new System.EventHandler(this.operacoes);
             // 
             // btnmin
             // 
@@ -263,7 +263,7 @@
             this.btnmin.TabIndex = 1;
             this.btnmin.Text = "-";
             this.btnmin.UseVisualStyleBackColor = true;
-            this.btnmin.Click += new System.EventHandler(this.btnmin_Click);
+            this.btnmin.Click += new System.EventHandler(this.operacoes);
             // 
             // btnsom
             // 
@@ -274,7 +274,7 @@
             this.btnsom.TabIndex = 0;
             this.btnsom.Text = "+";
             this.btnsom.UseVisualStyleBackColor = true;
-            this.btnsom.Click += new System.EventHandler(this.btnsom_Click);
+            this.btnsom.Click += new System.EventHandler(this.operacoes);
             // 
             // labelvisor
             // 
@@ -328,12 +328,14 @@
             // 
             // lblhist
             // 
-            this.lblhist.AutoSize = true;
-            this.lblhist.Location = new System.Drawing.Point(18, 7);
+            this.lblhist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblhist.Location = new System.Drawing.Point(331, 9);
             this.lblhist.Name = "lblhist";
-            this.lblhist.Size = new System.Drawing.Size(51, 20);
+            this.lblhist.Size = new System.Drawing.Size(145, 20);
             this.lblhist.TabIndex = 5;
             this.lblhist.Text = "label1";
+            this.lblhist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblhist.Click += new System.EventHandler(this.lblhist_Click);
             // 
             // calcsuper
             // 
@@ -351,10 +353,10 @@
             this.Name = "calcsuper";
             this.Text = "calcsuper";
             this.Load += new System.EventHandler(this.calcsuper_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.calcsuper_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
