@@ -139,7 +139,7 @@ namespace calculadora.formularios
             {
                 case Keys.Add:
                     botao.Text = "+";
-                    labelvisor.Text = "";
+                    labelvisor.Text = " ";
                     operacoes(botao, e);
                     break;
                 case Keys.Subtract:
