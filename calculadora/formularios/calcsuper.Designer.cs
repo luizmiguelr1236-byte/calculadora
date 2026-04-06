@@ -86,6 +86,7 @@
             this.btnvirgula.Text = ",";
             this.btnvirgula.UseVisualStyleBackColor = true;
             this.btnvirgula.Click += new System.EventHandler(this.btnvirgula_Click);
+            this.btnvirgula.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnvirgula_KeyDown);
             // 
             // btn3
             // 
@@ -182,6 +183,7 @@
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(100, 78);
             this.btn9.TabIndex = 2;
+            this.btn9.TabStop = false;
             this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = true;
             this.btn9.Click += new System.EventHandler(this.digitos);
@@ -350,10 +352,13 @@
             this.Controls.Add(this.labelvisor);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.KeyPreview = true;
             this.Name = "calcsuper";
             this.Text = "calcsuper";
             this.Load += new System.EventHandler(this.calcsuper_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.calcsuper_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calcsuper_KeyPress);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.calcsuper_KeyUp_1);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);

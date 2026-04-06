@@ -18,6 +18,7 @@ namespace calculadora.formularios
         public calcsuper()
         {
             InitializeComponent();
+            this.AcceptButton = btnig;
         }
 
 
@@ -66,6 +67,7 @@ namespace calculadora.formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 decimal secnumero = decimal.Parse(labelvisor.Text);
@@ -112,6 +114,7 @@ namespace calculadora.formularios
         private void calcsuper_Load(object sender, EventArgs e)
         {
             lblhist.Text = "";
+            this.AcceptButton = null;
         }
 
         private void lblhist_Click(object sender, EventArgs e)
@@ -121,11 +124,79 @@ namespace calculadora.formularios
 
         private void calcsuper_KeyDown(object sender, KeyEventArgs e)
         {
-         
+            Button botao = new Button();
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+            if (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9)
+            {
+                botao.Text = e.KeyCode.ToString().Substring(6);
+                digitos(botao, e);
+                
+
+            }
+            switch (e.KeyCode)
+            {
+                case Keys.Add:
+                    botao.Text = "+";
+
+                    operacoes(botao, e);
+                    break;
+                case Keys.Subtract:
+                    botao.Text = "-";
+                    operacoes(botao, e);
+                    break;
+                case Keys.Multiply:
+                    botao.Text = "X";
+                    operacoes(botao, e);
+                    break;
+                case Keys.Divide:
+                    botao.Text = ":";
+                    operacoes(botao, e);
+                    break;
+                
+
+            }
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+            {
+                e.SuppressKeyPress = true;
+                button1_Click(botao, e);
+            }
+            if (e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9)
+            {
+                botao.Text = e.KeyCode.ToString().Substring(1);
+                digitos(botao, e);
+            }
+            
         }
         private void calcsuper_KeyUp(object sender, KeyEventArgs e)
         {
 
+        }
+
+        private void calcsuper_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void calcsuper_KeyUp_1(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void btnvirgula_KeyDown(object sender, KeyEventArgs e)
+        {
+            Button botao = new Button();
+            if (e.KeyCode == Keys.Oemcomma)
+            {
+
+            }
+            else
+            {
+                botao.Text = e.KeyCode.ToString();
+                digitos(botao, e);
+            }
         }
     }
 }
