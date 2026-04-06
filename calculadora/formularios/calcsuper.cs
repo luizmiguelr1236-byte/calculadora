@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -133,14 +134,12 @@ namespace calculadora.formularios
             {
                 botao.Text = e.KeyCode.ToString().Substring(6);
                 digitos(botao, e);
-                
-
             }
             switch (e.KeyCode)
             {
                 case Keys.Add:
                     botao.Text = "+";
-
+                    labelvisor.Text = "";
                     operacoes(botao, e);
                     break;
                 case Keys.Subtract:
