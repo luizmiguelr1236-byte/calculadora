@@ -40,7 +40,7 @@ namespace calculadora.formularios
             prinumero = decimal.Parse(labelvisor.Text);
             operacao = ((Button)sender).Text;
             limpar = true;
-            lblhist.Text = "";
+            lblhist.Text = " ";
             lblhist.Text = prinumero + operacao;
         }
         private void digitos(object sender, EventArgs e)
