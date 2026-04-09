@@ -130,7 +130,7 @@ namespace calculadora.formularios
 
         private void lblhist_Click(object sender, EventArgs e)
         {
-
+        
         }
 
         private void calcsuper_KeyDown(object sender, KeyEventArgs e)
