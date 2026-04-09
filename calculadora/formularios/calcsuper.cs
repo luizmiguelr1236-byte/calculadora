@@ -136,6 +136,14 @@ namespace calculadora.formularios
         private void calcsuper_KeyDown(object sender, KeyEventArgs e)
         {
             Button botao = new Button();
+            if (e.KeyCode == Keys.Delete || e.KeyCode == Keys.Back)
+            {
+                btndel_Click(botao, e);
+            }
+            if (e.KeyCode == Keys.Back)
+            {
+                btndel_Click(botao, e);
+            }
             if (e.KeyCode == Keys.Escape)
             {
                 Close();
